@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -58,11 +58,16 @@ export const metadata: Metadata = {
     "desktop app",
     "tauri app",
   ],
-  authors: [{ name: "rubik" }],
-  creator: "rubik",
+  authors: [{ name: "Pancake" }],
+  creator: "Pancake",
   other: {
     "application-name": "trigr",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0d0d0d",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -71,10 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
         <script
@@ -88,7 +90,7 @@ export default function RootLayout({
               operatingSystem: "Windows 10+",
               description,
               version: "0.1.0",
-              author: { "@type": "Person", name: "rubik" },
+              author: { "@type": "Person", name: "Pancake" },
               offers: {
                 "@type": "Offer",
                 price: "0",
@@ -98,7 +100,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-background text-foreground font-sans">{children}</body>
+      <body className="bg-background text-foreground font-sans">
+        {children}
+      </body>
     </html>
   );
 }
