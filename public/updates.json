@@ -1,11 +1,11 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "pub_date": "2026-05-12T00:00:00Z",
-  "notes": "Fix TOC highlighting, add search, rename Trill, larger tray icon",
+  "notes": "Fix parser bugs (arrays, match syntax), refactor evaluator into organized method groups, extract hardcoded paths as constants, improve InfoTip animations, rewrite language docs with comprehensive coverage",
   "platforms": {
     "windows-x86_64": {
       "signature": "",
-      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.0_x64-setup.exe"
+      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.1_x64-setup.exe"
     }
   }
 }
