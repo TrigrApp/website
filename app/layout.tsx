@@ -28,20 +28,11 @@ export const metadata: Metadata = {
     siteName: "trigr",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 128,
-        height: 128,
-        alt: "trigr logo",
-      },
-    ],
   },
   twitter: {
     card: "summary",
     title,
     description,
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
