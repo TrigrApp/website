@@ -183,7 +183,7 @@ function Nav() {
             GitHub
           </a>
           <a
-            href="/downloads/trigr_0.1.0_x64-setup.exe"
+            href="/downloads/trigr_0.1.1_x64-setup.exe"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent"
             download
           >
@@ -232,7 +232,7 @@ function Footer() {
             <h4 className="text-xs font-semibold text-foreground mb-3 uppercase tracking-wider">Product</h4>
             <div className="space-y-2">
               <Link href="/" className="block text-xs text-muted hover:text-foreground transition-colors">Home</Link>
-              <a href="/downloads/trigr_0.1.0_x64-setup.exe" download className="block text-xs text-muted hover:text-foreground transition-colors">Download</a>
+              <a href="/downloads/trigr_0.1.1_x64-setup.exe" download className="block text-xs text-muted hover:text-foreground transition-colors">Download</a>
             </div>
           </div>
           <div>

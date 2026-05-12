@@ -68,7 +68,7 @@ export default function Home() {
           <ScrollReveal delay={300}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
-                href="/downloads/trigr_0.1.0_x64-setup.exe"
+                href="/downloads/trigr_0.1.1_x64-setup.exe"
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent-strong"
                 download
               >
@@ -90,7 +90,7 @@ export default function Home() {
                 Download for Windows
               </a>
               <a
-                href="/downloads/trigr_0.1.0_x64_en-US.msi"
+                href="/downloads/trigr_0.1.1_x64_en-US.msi"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border text-sm text-foreground font-medium hover:bg-card/50 hover:border-accent/20 transition-all"
                 download
               >
@@ -261,7 +261,7 @@ export default function Home() {
                 seconds.
               </p>
               <a
-                href="/downloads/trigr_0.1.0_x64-setup.exe"
+                href="/downloads/trigr_0.1.1_x64-setup.exe"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent"
                 download
               >
