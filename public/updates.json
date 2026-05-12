@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "pub_date": "2026-05-12T00:00:00Z",
+  "notes": "Fix TOC highlighting, add search, rename Trill, larger tray icon",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.0_x64-setup.exe"
+    }
+  }
+}
