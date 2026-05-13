@@ -152,7 +152,7 @@ function escapeHtml(text: string): string {
 
 function renderInline(text: string): string {
   let result = escapeHtml(text);
-  result = result.replace(/\{:info\s+([^:]+?):\}/g, '<span class="info-tip" title="$1"></span>');
+  result = result.replace(/\{:info\s+([^:]+?):\}/g, '<span class="info-tip" data-tip="$1"></span>');
   result = result.replace(/`([^`]+)`/g, "<code>$1</code>");
   result = result.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
   result = result.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");

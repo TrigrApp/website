@@ -430,6 +430,32 @@ body {
   content: "?";
 }
 
+.doc-content .info-tip:hover::before {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-foreground);
+  white-space: normal;
+  width: 400px;
+  max-width: min(50vw, 400px);
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .doc-content img {
   border-radius: 8px;
   border: 1px solid var(--color-border);

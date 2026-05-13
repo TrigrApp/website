@@ -1,11 +1,11 @@
 {
-  "version": "0.1.1",
-  "pub_date": "2026-05-12T00:00:00Z",
-  "notes": "Fix parser bugs (arrays, match syntax), refactor evaluator into organized method groups, extract hardcoded paths as constants, improve InfoTip animations, rewrite language docs with comprehensive coverage",
+  "version": "0.1.2",
+  "pub_date": "2026-05-13T00:00:00Z",
+  "notes": "Fix pipe operator with lambdas (filter, map, join_list), custom code editor with syntax highlighting, ScriptRunner args panel, UI polish and cleanup",
   "platforms": {
     "windows-x86_64": {
       "signature": "",
-      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.1_x64-setup.exe"
+      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.2_x64-setup.exe"
     }
   }
 }
