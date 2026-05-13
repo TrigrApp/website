@@ -1,3 +1,6 @@
+import Prism from "prismjs";
+import "./prism-trill";
+
 type Token =
   | { type: "fence"; lang: string; code: string }
   | { type: "table"; rows: string[][] }
@@ -43,10 +46,11 @@ export function renderMarkdown(md: string): string {
           i++;
           continue;
         }
-        const cells = row
+        const escaped = row.replace(/\\([|])/g, "\x00PIPE\x00");
+        const cells = escaped
           .split("|")
           .filter((c) => c.trim() !== "")
-          .map((c) => c.trim());
+          .map((c) => c.trim().replace(/\x00PIPE\x00/g, "|"));
         if (cells.length > 0) tableRows.push(cells);
         i++;
       }
@@ -122,6 +126,20 @@ export function renderMarkdown(md: string): string {
   return tokens.map(renderToken).join("\n");
 }
 
+function highlight(code: string, lang: string): string {
+  if (lang && Prism.languages[lang]) {
+    return Prism.highlight(code, Prism.languages[lang], lang);
+  }
+  return escapeHtml(code);
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, "&amp;")
@@ -131,6 +149,7 @@ function escapeHtml(text: string): string {
 
 function renderInline(text: string): string {
   let result = escapeHtml(text);
+  result = result.replace(/\{:info\s+([^:]+?):\}/g, '<span class="info-tip" title="$1"></span>');
   result = result.replace(/`([^`]+)`/g, "<code>$1</code>");
   result = result.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
   result = result.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
@@ -142,8 +161,12 @@ function renderInline(text: string): string {
 function renderToken(token: Token): string {
   switch (token.type) {
     case "fence": {
-      const escaped = escapeHtml(token.code);
-      return `<pre><code>${escaped}</code></pre>`;
+      const lang = token.lang;
+      const highlighted = highlight(token.code, lang);
+      if (!lang) {
+        return `<pre><code>${highlighted}</code></pre>`;
+      }
+      return `<pre class="language-${lang}"><code class="language-${lang}">${highlighted}</code></pre>`;
     }
     case "table": {
       const isHeader = token.rows.length > 0;
@@ -168,8 +191,10 @@ function renderToken(token: Token): string {
       return "<hr>";
     case "blockquote":
       return `<blockquote>${renderInline(token.text)}</blockquote>`;
-    case "heading":
-      return `<h${token.level}>${renderInline(token.text)}</h${token.level}>`;
+    case "heading": {
+      const id = slugify(token.text);
+      return `<h${token.level} id="${id}"><a href="#${id}" class="anchor">${renderInline(token.text)}</a></h${token.level}>`;
+    }
     case "paragraph":
       return `<p>${renderInline(token.text)}</p>`;
   }

@@ -22,17 +22,30 @@ Triggers are the core of trigr. Each trigger has an abbreviation (the shortcut y
 ### Plain Text
 The simplest mode. Type the abbreviation and it's replaced verbatim.
 
+### Variable Substitution
+Use `{{name}}` syntax to reference global variables or built-in values like `{{date}}`, `{{time}}`, `{{year}}`.
+
+```text
+Abbreviation: ;;sig
+Replacement: Best regards,\n{{fullname}}
+```
+
+### Trill Expressions
+Use `{{expression}}` syntax for dynamic text generation. Everything inside `{{...}}` is evaluated as a Trill expression:
+
+```text
+Abbreviation: ;;greet
+Replacement: {{if to_num(now("%H")) < 12 then "Morning" else "Afternoon"}}
+```
+
 ### Argument Mode
-When enabled, you can pass arguments after the abbreviation. For example:
+When enabled, you can pass arguments after the abbreviation. Arguments are available as `args[0]`, `args[1]`, etc.:
 
 ```text
 Abbreviation: ;;email
-Replacement: My email is {{name}}@example.com
-Type: ;;email john → "My email is john@example.com"
+Replacement: {{args[0]}}@example.com
+Type: ;;email john  →  john@example.com
 ```
-
-### Trill Script
-Use the full power of Trill to generate dynamic text. See [Trill Scripting](/docs/trill-scripting) for details.
 
 ## Managing Triggers
 

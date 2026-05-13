@@ -10,7 +10,7 @@ trigr is a desktop text expander that runs in your system tray. Define shortcuts
 ## Installation
 
 1. Download the latest installer from [trigr.pancake.wtf](https://trigr.pancake.wtf)
-2. Run the `.exe` or `.msi` installer
+2. Run the `.exe` installer
 3. Launch trigr,  it starts in your system tray
 4. Click the tray icon to open the Trigger Manager
 

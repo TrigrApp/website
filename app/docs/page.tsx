@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BookOpen,
+  BookMarked,
   Code,
   Variable,
   Package,
@@ -21,6 +22,7 @@ const iconMap: Record<string, typeof BookOpen> = {
   "getting-started": Zap,
   triggers: BookOpen,
   "trill-scripting": Code,
+  "trill-functions": BookMarked,
   "global-variables": Variable,
   "export-import": Download,
   packages: Package,
@@ -66,6 +68,8 @@ export default function DocsPage() {
                       "Create, manage, and organize your text expansion shortcuts."}
                     {doc.title === "Trill Scripting" &&
                       "A custom scripting language for dynamic text generation."}
+                    {doc.title === "Function Reference" &&
+                      "Complete reference for all built-in Trill string, number, list, date, and utility functions."}
                     {doc.title === "Global Variables" &&
                       "Create reusable expressions accessible from any trigger."}
                     {doc.title === "Export & Import" &&

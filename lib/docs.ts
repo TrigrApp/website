@@ -40,6 +40,7 @@ export function getAllDocs(): DocSection[] {
     "getting-started",
     "triggers",
     "trill-scripting",
+    "trill-functions",
     "global-variables",
     "export-import",
     "packages",
