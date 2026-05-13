@@ -10,11 +10,11 @@ type OsInfo = {
 
 function detectOs(): OsInfo {
   const ua = navigator.userAgent;
+  if (/Android/i.test(ua)) return { os: "android", label: "Coming soon for Android", available: false };
+  if (/iPad|iPhone|iPod/i.test(ua)) return { os: "ios", label: "Coming soon for iOS", available: false };
   if (ua.includes("Windows")) return { os: "windows", label: "Download for Windows", available: true };
   if (ua.includes("Mac")) return { os: "mac", label: "Coming soon for Mac", available: false };
   if (ua.includes("Linux")) return { os: "linux", label: "Coming soon for Linux", available: false };
-  if (ua.includes("Android")) return { os: "android", label: "Coming soon for Android", available: false };
-  if (/iPad|iPhone|iPod/.test(ua)) return { os: "ios", label: "Coming soon for iOS", available: false };
   return { os: "unknown", label: "Coming soon", available: false };
 }
 
