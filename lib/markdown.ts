@@ -42,7 +42,7 @@ export function renderMarkdown(md: string): string {
       const tableRows: string[][] = [];
       while (i < lines.length && lines[i].trimStart().startsWith("|")) {
         const row = lines[i].trim();
-        if (row.includes("---")) {
+        if (/---/.test(row)) {
           i++;
           continue;
         }

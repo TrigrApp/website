@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import "./globals.css";
@@ -72,26 +73,27 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-        <script
+        <Script
+          id="schema-org"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              name: "trigr",
-              applicationCategory: "ProductivityApplication",
-              operatingSystem: "Windows 10+",
-              description,
-              version: "0.1.0",
-              author: { "@type": "Person", name: "Pancake" },
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
-            }),
-          }}
-        />
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "trigr",
+            applicationCategory: "ProductivityApplication",
+            operatingSystem: "Windows 10+",
+            description,
+            version: "0.1.0",
+            author: { "@type": "Person", name: "Pancake" },
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          })}
+        </Script>
       </head>
       <body className="bg-background text-foreground font-sans">
         <Nav />
@@ -137,7 +139,7 @@ function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-foreground mb-3 uppercase tracking-wider">Connect</h4>
             <div className="space-y-2">
-              <a href="https://github.com/TrigrApp" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted hover:text-foreground transition-colors">GitHub</a>
+              <Link href="https://github.com/TrigrApp" target="_blank" rel="noopener noreferrer" className="block text-xs text-muted hover:text-foreground transition-colors">GitHub</Link>
             </div>
           </div>
         </div>
@@ -145,7 +147,7 @@ function Footer() {
       <div className="border-t border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <p className="text-xs text-muted/60">Free and open source</p>
-          <p className="text-xs text-muted/60">v0.1.0</p>
+          <p className="text-xs text-muted/60">v0.1.4</p>
         </div>
       </div>
     </footer>

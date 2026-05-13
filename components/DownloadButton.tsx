@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type OsInfo = {
   os: string;
@@ -19,7 +20,7 @@ function detectOs(): OsInfo {
 }
 
 export function DownloadButton() {
-  const [info, setInfo] = useState<OsInfo>(detectOs());
+  const [info, setInfo] = useState<OsInfo>(() => detectOs());
 
   if (!info) {
     return (
@@ -36,7 +37,7 @@ export function DownloadButton() {
 
   if (info.available) {
     return (
-      <a
+      <Link
         href="/downloads/trigr_0.1.4_x64-setup.exe"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent-strong"
         download
@@ -48,7 +49,7 @@ export function DownloadButton() {
           <line x1="12" x2="12" y1="15" y2="3" />
         </svg>
         {info.label}
-      </a>
+      </Link>
     );
   }
 

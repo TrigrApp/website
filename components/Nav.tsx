@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/docs", label: "Docs" },
@@ -11,11 +10,6 @@ const navLinks = [
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {

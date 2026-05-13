@@ -5,6 +5,7 @@ import { ChevronLeft } from "lucide-react";
 import { docs, docNav } from "@/lib/docs";
 import { siteUrl } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
+import { Markdown } from "@/components/Markdown";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -87,12 +88,7 @@ export default async function DocPage({ params }: Props) {
                 </h1>
                 <p className="text-sm text-secondary">{doc.description}</p>
               </div>
-              <div
-                className="doc-content"
-                dangerouslySetInnerHTML={{
-                  __html: renderMarkdown(doc.content),
-                }}
-              />
+              <Markdown className="doc-content" html={renderMarkdown(doc.content)} />
 
               <div className="flex items-center justify-between mt-16 pt-8 border-t border-border">
                 {prev ? (
