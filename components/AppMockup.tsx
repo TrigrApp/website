@@ -50,7 +50,7 @@ export function AppMockup() {
   const sideNav = [
     { icon: "zap", label: "Triggers", badge: 4, active: true },
     { icon: "hash", label: "Variables", badge: 2, active: false },
-    { icon: "script", label: "Script", badge: null, active: false },
+    { icon: "script", label: "Trill", badge: null, active: false },
     { icon: "package", label: "Packages", badge: null, active: false },
     { icon: "settings", label: "Settings", badge: null, active: false },
   ];

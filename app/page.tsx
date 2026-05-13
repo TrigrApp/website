@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AppMockup, PackagesMockup } from "@/components/AppMockup";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const features = [
   {
@@ -45,8 +46,8 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        <section className="relative px-6 pt-32 pb-28 max-w-4xl mx-auto text-center">
-          <div className="absolute inset-0 bg-subtle-grid pointer-events-none" />
+        <section className="relative px-6 pt-32 pb-28 max-w-4xl mx-auto text-center overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl pointer-events-none" />
 
           <ScrollReveal delay={100}>
@@ -66,42 +67,12 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="/downloads/trigr_0.1.1_x64-setup.exe"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent-strong"
-                download
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:translate-y-0.5 transition-transform"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" x2="12" y1="15" y2="3" />
-                </svg>
-                Download for Windows
-              </a>
-              <a
-                href="/downloads/trigr_0.1.1_x64_en-US.msi"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border text-sm text-foreground font-medium hover:bg-card/50 hover:border-accent/20 transition-all"
-                download
-              >
-                MSI Installer
-              </a>
-            </div>
+            <DownloadButton />
           </ScrollReveal>
 
           <ScrollReveal delay={400}>
             <p className="text-xs text-muted mt-4">
-              Windows 10+ · x64 · Free & open source
+              Free & open source
             </p>
           </ScrollReveal>
         </section>
@@ -245,45 +216,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 pb-32 max-w-lg mx-auto text-center">
-          <div className="rounded-2xl border border-border bg-gradient-to-b from-card/50 to-background p-10 relative overflow-hidden">
-            <div className="absolute inset-0 bg-subtle-grid pointer-events-none opacity-30" />
-            <div className="relative">
-              <h2 className="text-2xl font-bold tracking-tight mb-3">
-                Ready to type faster?
-              </h2>
-              <p className="text-sm text-secondary mb-8 max-w-xs mx-auto leading-relaxed">
-                Download trigr free and start expanding your shortcuts in
-                seconds.
-              </p>
-              <a
-                href="/downloads/trigr_0.1.1_x64-setup.exe"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent"
-                download
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" x2="12" y1="15" y2="3" />
-                </svg>
-                Download for Windows
-              </a>
-              <p className="text-xs text-muted/60 mt-4">
-                Free · Open source · Windows 10+
-              </p>
             </div>
           </div>
         </section>

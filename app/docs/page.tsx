@@ -32,7 +32,6 @@ export default function DocsPage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <section className="relative px-6 pt-28 pb-20 max-w-4xl mx-auto">
-          <div className="absolute inset-0 bg-grid pointer-events-none opacity-50" />
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent-muted text-sm text-accent mb-6">
               <BookOpen size={14} />

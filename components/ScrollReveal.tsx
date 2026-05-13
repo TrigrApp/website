@@ -6,16 +6,12 @@ interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  stagger?: boolean;
-  staggerDelay?: number;
 }
 
 export function ScrollReveal({
   children,
   className = "",
   delay = 0,
-  stagger = false,
-  staggerDelay = 100,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -27,13 +23,6 @@ export function ScrollReveal({
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            if (stagger) {
-              const kids = entry.target.querySelectorAll(".stagger");
-              kids.forEach((kid, i) => {
-                (kid as HTMLElement).style.animationDelay = `${delay + i * staggerDelay}ms`;
-                kid.classList.add("animate-fade-up");
-              });
-            }
             entry.target.classList.add("animate-fade-up");
             observer.unobserve(entry.target);
           }
@@ -44,7 +33,7 @@ export function ScrollReveal({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay, stagger, staggerDelay]);
+  }, [delay]);
 
   return (
     <div ref={ref} className={`opacity-0 ${className}`}>
