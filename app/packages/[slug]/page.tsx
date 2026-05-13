@@ -113,10 +113,10 @@ export default async function PackagePage({ params }: Props) {
                 <p className="text-sm text-secondary">{pkg.description}</p>
               </div>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors cursor-pointer select-none self-start shrink-0">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-white text-sm font-medium select-none self-start shrink-0">
               <Download size="15" />
               Install Package
-            </div>
+            </span>
           </div>
 
           <div className="flex items-center gap-3 mb-8">
