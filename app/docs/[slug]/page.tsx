@@ -42,6 +42,7 @@ export default async function DocPage({ params }: Props) {
   const doc = docs.find((d) => d.slug === slug);
   if (!doc) notFound();
 
+  const contentHtml = renderMarkdown(doc.content);
   const currentIndex = docNav.findIndex((d) => d.slug === slug);
   const prev = currentIndex > 0 ? docNav[currentIndex - 1] : null;
   const next =
@@ -88,7 +89,7 @@ export default async function DocPage({ params }: Props) {
                 </h1>
                 <p className="text-sm text-secondary">{doc.description}</p>
               </div>
-              <Markdown className="doc-content" html={renderMarkdown(doc.content)} />
+              <Markdown className="doc-content" html={contentHtml} />
 
               <div className="flex items-center justify-between mt-16 pt-8 border-t border-border">
                 {prev ? (
