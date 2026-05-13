@@ -1,11 +1,10 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "pub_date": "2026-05-13T00:00:00Z",
   "notes": "Fix pipe operator with lambdas (filter, map, join_list), custom code editor with syntax highlighting, ScriptRunner args panel, UI polish and cleanup",
   "platforms": {
     "windows-x86_64": {
-      "signature": "",
-      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.2_x64-setup.exe"
+      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.3_x64-setup.exe"
     }
   }
 }
