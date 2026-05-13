@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 const TWEMOJI_BASE = "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg";
@@ -63,7 +64,7 @@ export function AppMockup() {
             <LogoIcon size={14} />
             <span className="text-[10px] font-semibold tracking-tight text-foreground">trigr</span>
           </div>
-          <nav className="flex-1 px-1.5 py-1.5 space-y-0.5">
+          <nav className="flex-1 p-1.5 space-y-0.5">
             {sideNav.map((item) => (
               <div
                 key={item.label}
@@ -73,7 +74,7 @@ export function AppMockup() {
                     : "text-secondary hover:text-foreground hover:bg-card/50"
                 }`}
               >
-                <span className="w-3.5 h-3.5 flex items-center justify-center shrink-0">
+                <span className="size-3.5 flex items-center justify-center shrink-0">
                   {item.icon === "zap" && (
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -139,7 +140,7 @@ export function AppMockup() {
                 <path d="m21 21-4.3-4.3" />
               </svg>
               <div className="w-32 h-7 rounded-[4px] bg-[#181818] border border-[#2a2a2a] text-[10px] text-[#666] pl-7 pr-2.5 flex items-center select-none">
-                Search...
+                Search&hellip;
               </div>
             </div>
           </div>
@@ -285,7 +286,7 @@ export function PackagesMockup() {
 
   return (
     <div className="mockup-window w-full max-w-2xl mx-auto">
-      <aside className="flex items-center gap-2 px-3 py-3 border-b border-border bg-background/30">
+      <aside className="flex items-center gap-2 p-3 border-b border-border bg-background/30">
         <LogoIcon size={16} />
         <span className="text-xs font-semibold tracking-tight text-foreground">trigr</span>
         <span className="text-[11px] text-muted font-mono tracking-tight ml-auto">Package Browser</span>
@@ -296,7 +297,7 @@ export function PackagesMockup() {
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
           </svg>
           <div className="w-full h-8 rounded-lg bg-[#181818] border border-[#2a2a2a] text-xs text-[#666] pl-9 pr-3 flex items-center select-none">
-            Search packages...
+            Search packages&hellip;
           </div>
         </div>
         <div className="grid grid-cols-2 gap-2.5">
@@ -308,7 +309,7 @@ export function PackagesMockup() {
               <div className="flex items-start gap-2.5">
                 <div className="size-8 rounded-lg bg-background/40 border border-border flex items-center justify-center shrink-0 overflow-hidden">
                   {pkg.twemoji ? (
-                    <img src={TWEMOJI(pkg.twemoji)} alt="" className="size-5" crossOrigin="anonymous" />
+                    <Image src={TWEMOJI(pkg.twemoji)} alt="" width="20" height="20" className="size-5" crossOrigin="anonymous" />
                   ) : pkg.icon ? (
                     pkg.icon
                   ) : (

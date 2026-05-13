@@ -92,10 +92,12 @@ export function Nav() {
         }`}
       >
         <div
+          role="presentation"
           className={`absolute inset-0 bg-background/60 backdrop-blur-sm transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setIsOpen(false)}
+          onKeyDown={(e) => { if (e.key === "Escape") setIsOpen(false); }}
         />
         <div
           className={`relative bg-background border-b border-border shadow-xl transition-all duration-300 ease-in-out ${

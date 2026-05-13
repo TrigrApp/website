@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type OsInfo = {
   os: string;
@@ -19,11 +19,7 @@ function detectOs(): OsInfo {
 }
 
 export function DownloadButton() {
-  const [info, setInfo] = useState<OsInfo | null>(null);
-
-  useEffect(() => {
-    setInfo(detectOs());
-  }, []);
+  const [info, setInfo] = useState<OsInfo>(detectOs());
 
   if (!info) {
     return (
@@ -33,7 +29,7 @@ export function DownloadButton() {
           <polyline points="7 10 12 15 17 10" />
           <line x1="12" x2="12" y1="15" y2="3" />
         </svg>
-        Detecting...
+        Detecting&hellip;
       </span>
     );
   }
@@ -44,6 +40,7 @@ export function DownloadButton() {
         href="/downloads/trigr_0.1.1_x64-setup.exe"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent-strong"
         download
+        rel="noreferrer"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

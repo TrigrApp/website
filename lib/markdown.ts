@@ -49,8 +49,11 @@ export function renderMarkdown(md: string): string {
         const escaped = row.replace(/\\([|])/g, "\x00PIPE\x00");
         const cells = escaped
           .split("|")
-          .filter((c) => c.trim() !== "")
-          .map((c) => c.trim().replace(/\x00PIPE\x00/g, "|"));
+          .reduce<string[]>((acc, c) => {
+            const t = c.trim();
+            if (t !== "") acc.push(t.replace(/\x00PIPE\x00/g, "|"));
+            return acc;
+          }, []);
         if (cells.length > 0) tableRows.push(cells);
         i++;
       }

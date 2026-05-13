@@ -39,7 +39,7 @@ export default function DocsPage() {
               <BookOpen size={14} />
               Documentation
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight mb-4">
               Everything you need to know
             </h1>
             <p className="text-lg text-secondary max-w-lg mx-auto">

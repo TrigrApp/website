@@ -82,7 +82,7 @@ export default async function DocPage({ params }: Props) {
 
             <article className="flex-1 min-w-0">
               <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight mb-3">
+                <h1 className="text-3xl font-semibold tracking-tight mb-3">
                   {doc.title}
                 </h1>
                 <p className="text-sm text-secondary">{doc.description}</p>

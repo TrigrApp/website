@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { packages } from "@/lib/packages";
 
@@ -47,7 +48,7 @@ export default function PackagesPage() {
       <main className="flex-1">
         <section className="px-6 pt-28 pb-20 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight mb-3">
               Packages
             </h1>
             <p className="text-secondary max-w-md mx-auto">
@@ -65,7 +66,7 @@ export default function PackagesPage() {
                 <div className="flex items-start gap-3">
                   <div className="size-10 rounded-lg bg-background/40 border border-border flex items-center justify-center shrink-0 overflow-hidden">
                     {pkg.slug === "emojis" ? (
-                      <img src={TWEMOJI("1f60a")} alt="" className="size-6" crossOrigin="anonymous" />
+                      <Image src={TWEMOJI("1f60a")} alt="" width="24" height="24" className="size-6" crossOrigin="anonymous" />
                     ) : (
                       <svg
                         width="18"

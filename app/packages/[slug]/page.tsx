@@ -107,7 +107,7 @@ export default async function PackagePage({ params }: Props) {
                 </svg>
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight mb-1">
+                <h1 className="text-3xl font-semibold tracking-tight mb-1">
                   {pkg.name}
                 </h1>
                 <p className="text-sm text-secondary">{pkg.description}</p>
@@ -131,9 +131,9 @@ export default async function PackagePage({ params }: Props) {
             <h4 className="text-sm font-semibold mb-3">Triggers</h4>
             <div className="rounded-xl border border-border bg-card/50 overflow-hidden">
               <div className="divide-y divide-border/30">
-                {pkg.triggersList.map((trigger, i) => (
+                {pkg.triggersList.map((trigger) => (
                   <div
-                    key={i}
+                    key={trigger.abbreviation}
                     className="px-4 py-3 flex items-center gap-3 hover:bg-card/30 transition-colors"
                   >
                     <span

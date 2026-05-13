@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AppMockup, PackagesMockup } from "@/components/AppMockup";
@@ -42,16 +43,36 @@ const features = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "trigr — Text expansion at your fingertips",
+  description:
+    "A desktop text expander that turns your shortcuts into text. Powered by Trill, a custom scripting language for dynamic text generation. Free and open source.",
+  openGraph: {
+    title: "trigr — Text expansion at your fingertips",
+    description:
+      "A desktop text expander that turns your shortcuts into text. Powered by Trill, a custom scripting language for dynamic text generation.",
+    url: "https://trigr.pancake.wtf",
+    siteName: "trigr",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "trigr — Text expansion at your fingertips",
+    description:
+      "A desktop text expander that turns your shortcuts into text. Powered by Trill, a custom scripting language for dynamic text generation.",
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <section className="relative px-6 pt-32 pb-28 max-w-4xl mx-auto text-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/3 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[800px] bg-accent/3 rounded-full blur-3xl pointer-events-none" />
 
           <ScrollReveal delay={100}>
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+            <h1 className="text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.05] mb-6">
               Text expansion at
               <br />
               <span className="text-gradient">your fingertips</span>
@@ -85,7 +106,7 @@ export default function Home() {
                   <span className="text-[10px] font-semibold text-muted uppercase tracking-widest">
                     01
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mt-3 mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mt-3 mb-3">
                     Trigger Manager
                   </h2>
                   <p className="text-sm text-secondary leading-relaxed">
@@ -109,12 +130,12 @@ export default function Home() {
                   <span className="text-[10px] font-semibold text-muted uppercase tracking-widest">
                     02
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mt-3 mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mt-3 mb-3">
                     Package Browser
                   </h2>
                   <p className="text-sm text-secondary leading-relaxed">
                     Discover and install pre-built trigger collections. Date
-                    formatters, code snippets, email templates — all available
+                    formatters, code snippets, email templates: all available
                     with one click.
                   </p>
                 </div>
@@ -126,7 +147,7 @@ export default function Home() {
         <section className="px-6 pb-28 max-w-5xl mx-auto">
           <div className="border-t border-border pt-16">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">
                 Everything you need
               </h2>
               <p className="text-sm text-secondary max-w-md mx-auto">
@@ -167,7 +188,7 @@ export default function Home() {
                   Documentation
                 </h3>
                 <p className="text-xs text-secondary leading-relaxed mb-3">
-                  Learn how to use trigr — from basic triggers to advanced Trill
+                  Learn how to use trigr, from basic triggers to advanced Trill
                   scripting.
                 </p>
                 <span className="text-xs text-accent font-medium">
