@@ -1,11 +1,11 @@
 {
-  "version": "0.1.5",
-  "pub_date": "2026-05-25T00:00:00Z",
-  "notes": "Rebuild with new signing keys, fix updater signature field",
+  "version": "0.1.6",
+  "pub_date": "2026-05-26T00:00:00Z",
+  "notes": "Add tray tooltip, autostart minimized, bump to v0.1.6",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.5_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRK2lJRkUrazAveVE3V0tXMG1nWlZLMmR4blRDa3BiT05TalJrWTVFUGF5d0IzenZRTzdWUlJ6WVExV0VHZStsNHZaYkNGWWNnbEFvNXR2RURkR1hLZDZ2bmtpdldyV2dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5NzczMDk3CWZpbGU6dHJpZ3JfMC4xLjVfeDY0LXNldHVwLmV4ZQpuNTliUUZHa2IzMFJmOEtjMlI5Sy9IcFVId1NOTDdidDI3S3lyNlBTRXNyRDl2NWN6eHhDcVBxZWw0MytmblVXMDBiUkhHUHg1UDkxRUx3a2ZvZTFDUT09Cg=="
+      "url": "https://trigr.pancake.wtf/downloads/trigr_0.1.6_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRK2lJRkUrazAveWVtTHB6bjVoZVV6N3p1aktsME9jNTdxQTdSOEJoNVJNaldFOUJ6ZnlyK1NVVExEREdrc3R5T3hMeHRXRmREdXc0UmprajJsYVU3R01HS0RObkNmZnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc5Nzc0MDE0CWZpbGU6dHJpZ3JfMC4xLjZfeDY0LXNldHVwLmV4ZQpaOEg0cUJWUlczKzcwZzAvRU1NS0w0SjdaRGFUcEFYZ05MU3ZHSEdZczRMZm1UTzQ2dDJUT1NMWHpFY2RkTGU2dmM2WUlrVmcwQVdGanRldXROMUpBdz09Cg=="
     }
   }
 }

@@ -38,7 +38,7 @@ export function DownloadButton() {
   if (info.available) {
     return (
       <Link
-        href="/downloads/trigr_0.1.5_x64-setup.exe"
+        href="/downloads/trigr_0.1.6_x64-setup.exe"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all glow-accent-strong"
         download
         rel="noreferrer"

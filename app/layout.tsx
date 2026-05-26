@@ -85,7 +85,7 @@ export default function RootLayout({
             applicationCategory: "ProductivityApplication",
             operatingSystem: "Windows 10+",
             description,
-            version: "0.1.5",
+            version: "0.1.6",
             author: { "@type": "Person", name: "Pancake" },
             offers: {
               "@type": "Offer",
@@ -147,7 +147,7 @@ function Footer() {
       <div className="border-t border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <p className="text-xs text-muted/60">Free and open source</p>
-          <p className="text-xs text-muted/60">v0.1.5</p>
+          <p className="text-xs text-muted/60">v0.1.6</p>
         </div>
       </div>
     </footer>
